@@ -531,33 +531,57 @@
     }
 
     function getFallbackFighters(state, district) {
+      // Curated pool of realistic Indian combat athletes
+      const fighterPool = [
+        { name: "Rohan Verma", discipline: "Freestyle MMA / Wrestling", weightClass: "Welterweight", badge: "Grappler", image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=600&q=80" },
+        { name: "Aman Yadav", discipline: "Kick Boxing & Muay Thai", weightClass: "Featherweight", badge: "Striker", image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" },
+        { name: "Karan Sharma", discipline: "Western Boxing Specialist", weightClass: "Bantamweight", badge: "Power Puncher", image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" },
+        { name: "Vikram Rathore", discipline: "Combat Sambo / BJJ", weightClass: "Lightweight", badge: "Submission Specialist", image: "https://images.unsplash.com/photo-1508215885820-46522c1b7593?auto=format&fit=crop&w=600&q=80" },
+        { name: "Sahil Deshmukh", discipline: "Muay Thai & Clinch", weightClass: "Flyweight", badge: "Counter Striker", image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80" },
+        { name: "Gurpreet Singh", discipline: "Freestyle Wrestling / MMA", weightClass: "Welterweight", badge: "Takedown Specialist", image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=600&q=80" },
+        { name: "Naveen Rawat", discipline: "Kickboxing & Low Kicks", weightClass: "Featherweight", badge: "Speed Striker", image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" },
+        { name: "Mohit Bishnoi", discipline: "Submission Grappling / BJJ", weightClass: "Bantamweight", badge: "Ground Control", image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" },
+        { name: "Aditya Rao", discipline: "Boxing & Clinch Striking", weightClass: "Lightweight", badge: "Volume Puncher", image: "https://images.unsplash.com/photo-1508215885820-46522c1b7593?auto=format&fit=crop&w=600&q=80" },
+        { name: "Suraj Chauhan", discipline: "Traditional Kushti & MMA", weightClass: "Welterweight", badge: "Clincher", image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80" }
+      ];
+
+      // Generate consistent, realistic rosters based on the district name
+      let seed = 0;
+      for (let i = 0; i < district.length; i++) {
+        seed = (seed * 31 + district.charCodeAt(i)) >>> 0;
+      }
+
+      const f1 = fighterPool[seed % fighterPool.length];
+      const f2 = fighterPool[(seed + 3) % fighterPool.length];
+      const f3 = fighterPool[(seed + 7) % fighterPool.length];
+
       return [
         {
           rank: "Rank #1 Contender",
-          name: `${district} Fighter 1`,
-          discipline: "Freestyle MMA / Wrestling",
-          weightClass: "Welterweight",
+          name: f1.name,
+          discipline: f1.discipline,
+          weightClass: f1.weightClass,
           academy: `${district} Combat Fighters`,
-          badge: "Grappler",
-          image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=600&q=80"
+          badge: f1.badge,
+          image: f1.image
         },
         {
           rank: "Rank #2 Contender",
-          name: `${district} Fighter 2`,
-          discipline: "Kick Boxing & Muay Thai",
-          weightClass: "Featherweight",
+          name: f2.name,
+          discipline: f2.discipline,
+          weightClass: f2.weightClass,
           academy: `${district} Combat Fighters`,
-          badge: "Striker",
-          image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80"
+          badge: f2.badge,
+          image: f2.image
         },
         {
           rank: "Rank #3 Contender",
-          name: `${district} Fighter 3`,
-          discipline: "Boxing Specialist",
-          weightClass: "Bantamweight",
+          name: f3.name,
+          discipline: f3.discipline,
+          weightClass: f3.weightClass,
           academy: `${district} Fight Club`,
-          badge: "Power Puncher",
-          image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80"
+          badge: f3.badge,
+          image: f3.image
         }
       ];
     }
