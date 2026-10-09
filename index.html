@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Combat League (ICL) - Season 13 MMA Championship</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Oswald', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              red: '#DC2626',
+              darkRed: '#991B1B',
+              gold: '#F59E0B',
+              dark: '#0A0A0C',
+              card: '#16161A',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0A0A0C;
+      color: #E2E8F0;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-red-600 selection:text-white">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 bg-red-600 rounded-lg flex items-center justify-center font-heading text-2xl font-bold tracking-wider text-white shadow-lg shadow-red-600/40">
+          ICL
+        </div>
+        <div>
+          <span class="block font-heading text-xl sm:text-2xl font-bold tracking-wide uppercase text-white leading-none">
+            Indian Combat League
+          </span>
+          <span class="text-[10px] sm:text-xs text-zinc-400 font-medium tracking-widest uppercase">
+            Official MMA Championship 2026
+          </span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wider uppercase text-zinc-300">
+        <a href="#about" class="hover:text-red-500 transition-colors">About</a>
+        <a href="#fighters" class="hover:text-red-500 transition-colors">Fighters</a>
+        <a href="#schedule" class="hover:text-red-500 transition-colors">Event Details</a>
+        <a href="#contact" class="hover:text-red-500 transition-colors">Contact</a>
+      </nav>
+
+      <a href="#schedule" class="inline-flex items-center px-5 py-2.5 rounded-md font-heading font-semibold text-sm uppercase tracking-wider text-white bg-red-600 hover:bg-red-700 shadow-md shadow-red-600/30 transition-all">
+        Season 13
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <!-- Background Image with Gradient Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1920&q=80" 
+        alt="MMA Cage Fight" 
+        class="w-full h-full object-cover object-center opacity-25 filter grayscale contrast-125"
+      >
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+      <div class="absolute inset-0 bg-radial-gradient"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 py-20 text-center">
+      <!-- Federation Affiliation Pill -->
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-red-500/40 bg-red-950/40 text-red-400 text-xs font-semibold uppercase tracking-widest mb-6">
+        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+        Affiliated with NMAC India & Asian Martial Arts Games
+      </div>
+
+      <h1 class="font-heading text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight uppercase text-white mb-6">
+        Battle for Glory in <br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-400 to-amber-500">
+          ICL Season 13
+        </span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-base sm:text-lg text-zinc-300 leading-relaxed mb-8">
+        Official District Level MMA Championship 2026. Bringing together the fiercest Kids, Juniors, Seniors & Debutant fighters from top academies across India.
+      </p>
+
+      <!-- Event Quick Highlights -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10 text-left">
+        <div class="bg-zinc-900/90 border border-zinc-800 p-4 rounded-xl flex items-center gap-3">
+          <div class="p-3 bg-red-600/10 text-red-500 rounded-lg font-bold text-xl">📅</div>
+          <div>
+            <div class="text-xs uppercase text-zinc-400 font-semibold">Fight Date</div>
+            <div class="text-sm font-bold text-white">17th Nov 2026</div>
+          </div>
+        </div>
+        <div class="bg-zinc-900/90 border border-zinc-800 p-4 rounded-xl flex items-center gap-3">
+          <div class="p-3 bg-amber-500/10 text-amber-500 rounded-lg font-bold text-xl">📍</div>
+          <div>
+            <div class="text-xs uppercase text-zinc-400 font-semibold">Location</div>
+            <div class="text-sm font-bold text-white">Kolhapur Complex</div>
+          </div>
+        </div>
+        <div class="bg-zinc-900/90 border border-zinc-800 p-4 rounded-xl flex items-center gap-3">
+          <div class="p-3 bg-blue-500/10 text-blue-500 rounded-lg font-bold text-xl">🏆</div>
+          <div>
+            <div class="text-xs uppercase text-zinc-400 font-semibold">Tournament</div>
+            <div class="text-sm font-bold text-white">District Level MMA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#fighters" class="px-7 py-3.5 bg-red-600 hover:bg-red-700 text-white font-heading text-lg tracking-wider uppercase rounded-lg shadow-xl shadow-red-600/30 transition-all">
+          Explore Fighters Roster
+        </a>
+        <a href="#about" class="px-7 py-3.5 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-heading text-lg tracking-wider uppercase rounded-lg border border-zinc-700 transition-all">
+          Official Circular
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT & OFFICIAL NOTICE ================= -->
+  <section id="about" class="py-20 bg-brand-card border-y border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-block font-heading text-sm text-red-500 uppercase tracking-widest font-semibold">
+            Official Announcement
+          </div>
+          <h2 class="font-heading text-3xl sm:text-5xl font-bold uppercase text-white leading-tight">
+            High-Standard Competitive MMA Platform
+          </h2>
+          <p class="text-zinc-300 leading-relaxed">
+            The Indian Combat League (ICL) is recognized under the aegis of the National Martial Arts Committee - India, affiliated with Asian & World Martial Arts Games Committee, and member of TAFISA (recognized by IOC, WHO, ICSSPE, and UNESCO).
+          </p>
+          <div class="bg-zinc-900 p-5 rounded-xl border-l-4 border-red-600 space-y-2">
+            <h4 class="font-heading text-lg font-bold text-white uppercase tracking-wider">Coach & Academy Notice</h4>
+            <p class="text-sm text-zinc-400">
+              Invitations have been extended to elite coaches including Coach Danish Khan (Combat Fighters, Mira Road) along with premier MMA clubs, gyms, and academies across India to represent their finest combat athletes.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+            <div class="p-3 bg-zinc-900 rounded-lg text-center border border-zinc-800">
+              <span class="block text-2xl font-bold font-heading text-red-500">100%</span>
+              <span class="text-xs text-zinc-400 uppercase">Fair Play & Safety</span>
+            </div>
+            <div class="p-3 bg-zinc-900 rounded-lg text-center border border-zinc-800">
+              <span class="block text-2xl font-bold font-heading text-amber-500">IOC</span>
+              <span class="text-xs text-zinc-400 uppercase">TAFISA Backed</span>
+            </div>
+            <div class="p-3 bg-zinc-900 rounded-lg text-center border border-zinc-800">
+              <span class="block text-2xl font-bold font-heading text-white">4+</span>
+              <span class="text-xs text-zinc-400 uppercase">Fighter Brackets</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="relative rounded-2xl overflow-hidden border border-zinc-700 shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=1200&q=80" 
+              alt="Martial Arts Athlete Training" 
+              class="w-full h-96 object-cover"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-6">
+              <span class="text-xs font-semibold uppercase tracking-wider text-red-400 mb-1">Sanctioned Event</span>
+              <h3 class="font-heading text-xl font-bold text-white uppercase">Discipline • Sportsmanship • Excellence</h3>
+              <p class="text-xs text-zinc-300">Kolhapur Divisional Sport's Complex | 17.11.2026</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATE & CITY TOP FIGHTERS SELECTOR ================= -->
+  <section id="fighters" class="py-20 bg-brand-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-red-500 font-heading text-sm uppercase tracking-widest font-semibold block mb-2">
+          State & City Roster
+        </span>
+        <h2 class="font-heading text-3xl sm:text-5xl font-bold uppercase text-white mb-4">
+          Select Region & View Top 5 MMA Fighters
+        </h2>
+        <p class="text-zinc-400 text-sm sm:text-base">
+          Choose a region below to see the verified fight squad, primary disciplines, weight classes, and club representations.
+        </p>
+
+        <!-- Dropdown / Select Controller -->
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <label for="stateSelector" class="text-sm font-semibold text-zinc-300 uppercase tracking-wider">
+            Choose Region:
+          </label>
+          <div class="relative w-full sm:w-72">
+            <select 
+              id="stateSelector" 
+              class="w-full bg-zinc-900 border border-zinc-700 text-white py-3.5 px-4 pr-10 rounded-xl font-medium focus:ring-2 focus:ring-red-500 focus:outline-none appearance-none cursor-pointer shadow-lg"
+              onchange="renderFighters(this.value)"
+            >
+              <option value="mumbai">Mumbai (Combat Fighters Roster)</option>
+              <option value="delhi">Delhi NCR</option>
+              <option value="haryana">Haryana</option>
+              <option value="manipur">Manipur</option>
+              <option value="karnataka">Karnataka (Bengaluru)</option>
+              <option value="punjab">Punjab</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-zinc-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Selected Region Title Badge -->
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-4 mb-8">
+        <div>
+          <h3 id="selectedRegionTitle" class="font-heading text-2xl sm:text-3xl font-bold uppercase text-white">
+            Mumbai Squad
+          </h3>
+          <p id="selectedRegionSubtitle" class="text-xs sm:text-sm text-zinc-400">
+            Selected fighters representing Combat Fighters Academy, Mira Road
+          </p>
+        </div>
+        <span class="px-3 py-1 bg-red-600/20 border border-red-500/30 text-red-400 text-xs font-semibold rounded-full uppercase tracking-wider">
+          Top 5 Qualified
+        </span>
+      </div>
+
+      <!-- Fighter Cards Grid Container -->
+      <div id="fighterCardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= EVENT SCHEDULE & VENUE ================= -->
+  <section id="schedule" class="py-20 bg-brand-card border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-red-500 font-heading text-sm uppercase tracking-widest font-semibold block mb-2">Championship Arena</span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold uppercase text-white">Event Breakdown & Location</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl relative overflow-hidden group hover:border-red-500 transition-all">
+          <div class="text-red-500 font-heading text-3xl font-bold mb-2">01</div>
+          <h3 class="font-heading text-xl font-bold uppercase text-white mb-2">Fighter Weigh-Ins</h3>
+          <p class="text-sm text-zinc-400 mb-4">Official medical check, weigh-in measurements, and athlete rules briefing before fight bouts.</p>
+          <span class="text-xs font-semibold text-zinc-500 uppercase tracking-widest">Morning Session • 08:00 AM</span>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl relative overflow-hidden group hover:border-red-500 transition-all">
+          <div class="text-red-500 font-heading text-3xl font-bold mb-2">02</div>
+          <h3 class="font-heading text-xl font-bold uppercase text-white mb-2">Prelims & District Bouts</h3>
+          <p class="text-sm text-zinc-400 mb-4">Kids, Junior, Seniors, and Debutant matches in Kickboxing, Boxing & Amateur MMA categories.</p>
+          <span class="text-xs font-semibold text-zinc-500 uppercase tracking-widest">Midday Session • 11:30 AM</span>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl relative overflow-hidden group hover:border-red-500 transition-all">
+          <div class="text-red-500 font-heading text-3xl font-bold mb-2">03</div>
+          <h3 class="font-heading text-xl font-bold uppercase text-white mb-2">Main Card & Medals</h3>
+          <p class="text-sm text-zinc-400 mb-4">District championship title fights followed by official podium felicitation by ICL executive board.</p>
+          <span class="text-xs font-semibold text-zinc-500 uppercase tracking-widest">Evening Session • 05:00 PM</span>
+        </div>
+      </div>
+
+      <!-- Venue details box -->
+      <div class="mt-12 bg-gradient-to-r from-zinc-900 via-zinc-900 to-black p-8 rounded-2xl border border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <span class="text-xs text-red-500 font-bold uppercase tracking-widest">Official Stadium</span>
+          <h4 class="font-heading text-2xl font-bold text-white uppercase mt-1">Kolhapur Divisional Sport's Complex</h4>
+          <p class="text-sm text-zinc-400 mt-1">Kolhapur, Maharashtra, India • Tuesday, 17th November 2026</p>
+        </div>
+        <div class="text-right">
+          <span class="inline-block px-5 py-2.5 rounded-lg bg-zinc-800 text-white font-heading tracking-wider uppercase text-sm border border-zinc-700">
+            Sanctioned by NMAC India
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT & OFFICIAL FOOTER ================= -->
+  <footer id="contact" class="bg-black text-zinc-400 border-t border-zinc-900 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Col 1 -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 bg-red-600 rounded flex items-center justify-center font-heading text-white font-bold text-lg">ICL</span>
+            <span class="font-heading text-xl text-white uppercase font-bold tracking-wider">Indian Combat League</span>
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Pioneering grassroot and professional mixed martial arts development across Indian districts and states.
+          </p>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <h5 class="font-heading text-sm uppercase text-white font-bold tracking-wider mb-4">Official Head Office</h5>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            ICL Studio,<br>
+            Mawana, Meerut - 250401<br>
+            Uttar Pradesh, India
+          </p>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <h5 class="font-heading text-sm uppercase text-white font-bold tracking-wider mb-4">Executive Leadership</h5>
+          <p class="text-xs text-zinc-300 font-medium">R. K. Bharat</p>
+          <p class="text-xs text-zinc-400">Chief Executive Officer (CEO)</p>
+          <p class="text-xs text-zinc-400 mt-2 font-mono">Mobile: +91 9897939380</p>
+        </div>
+
+        <!-- Col 4 -->
+        <div>
+          <h5 class="font-heading text-sm uppercase text-white font-bold tracking-wider mb-4">Governing Bodies</h5>
+          <ul class="text-xs space-y-1.5 text-zinc-400">
+            <li>• National Martial Arts Committee - India</li>
+            <li>• Asian Martial Arts Games Committee</li>
+            <li>• World Martial Arts Games Committee</li>
+            <li>• TAFISA (IOC, WHO, UNESCO Recognized)</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-zinc-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500">
+        <p>© 2026 Indian Combat League (ICL). All Rights Reserved.</p>
+        <p class="mt-2 sm:mt-0">Official Invitation & District Championship Portal</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT DATA & LOGIC ================= -->
+  <script>
+    // Fighters Database (Including all 5 fighters from the Mumbai invitation letter + top 5 popular states)
+    const fightersData = {
+      mumbai: {
+        title: "Mumbai Selected Squad",
+        subtitle: "Official Roster from Combat Fighters Academy, Mira Road (ICL Season 13)",
+        fighters: [
+          {
+            name: "Daksh Shetty",
+            discipline: "Boxing / Brazilian Jiu-Jitsu (BJJ)",
+            weightClass: "Welterweight (77 kg)",
+            academy: "Combat Fighters, Mira Road",
+            record: "8 Wins - 1 Loss",
+            image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Grappler / Striker"
+          },
+          {
+            name: "Chandru Arjun",
+            discipline: "Kick Boxing / Muay Thai",
+            weightClass: "Featherweight (66 kg)",
+            academy: "Combat Fighters, Mira Road",
+            record: "6 Wins - 2 Losses",
+            image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Muay Thai Clinch"
+          },
+          {
+            name: "Arun Patel",
+            discipline: "Boxing Specialist",
+            weightClass: "Lightweight (70 kg)",
+            academy: "Combat Fighters, Mira Road",
+            record: "5 Wins - 0 Losses",
+            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Power Puncher"
+          },
+          {
+            name: "Faizal Shaikh",
+            discipline: "Kickboxing & Low Kicks",
+            weightClass: "Bantamweight (61 kg)",
+            academy: "Combat Fighters, Mira Road",
+            record: "7 Wins - 2 Losses",
+            image: "https://images.unsplash.com/photo-1508215885820-46522c1b7593?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Technical Striker"
+          },
+          {
+            name: "Aneens Qureshi",
+            discipline: "Kickboxing / Striking",
+            weightClass: "Flyweight (57 kg)",
+            academy: "Combat Fighters, Mira Road",
+            record: "4 Wins - 1 Loss",
+            image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Fast Reflex Striker"
+          }
+        ]
+      },
+      delhi: {
+        title: "Delhi NCR Squad",
+        subtitle: "Capital combat warriors representing North India's premier MMA facilities",
+        fighters: [
+          {
+            name: "Anshul 'King of Lions' Jubli",
+            discipline: "MMA / Boxing",
+            weightClass: "Lightweight (70 kg)",
+            academy: "Crosstrain Fight Club, Delhi",
+            record: "7 Wins - 1 Loss",
+            image: "https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Road to UFC Champ"
+          },
+          {
+            name: "Angad Bisht",
+            discipline: "Flyweight MMA / Grappling",
+            weightClass: "Flyweight (57 kg)",
+            academy: "Mutant MMA, Delhi",
+            record: "9 Wins - 3 Losses",
+            image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Submission Specialist"
+          },
+          {
+            name: "Sanjeev Kumar",
+            discipline: "Kickboxing / Sambo",
+            weightClass: "Bantamweight (61 kg)",
+            academy: "Delhi Combat Arena",
+            record: "6 Wins - 1 Loss",
+            image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Aggressive Pressure"
+          },
+          {
+            name: "Rohit Pundeer",
+            discipline: "Freestyle Wrestling & MMA",
+            weightClass: "Featherweight (66 kg)",
+            academy: "Spartan MMA Delhi",
+            record: "5 Wins - 2 Losses",
+            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Ground and Pound"
+          },
+          {
+            name: "Priya Sharma",
+            discipline: "Muay Thai / Kickboxing",
+            weightClass: "Strawweight (52 kg)",
+            academy: "Iron Grip Delhi",
+            record: "4 Wins - 0 Losses",
+            image: "https://images.unsplash.com/photo-1508215885820-46522c1b7593?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "High Volume Striker"
+          }
+        ]
+      },
+      haryana: {
+        title: "Haryana State Squad",
+        subtitle: "Wrestling-powerhouse state athletes known for takedowns and endurance",
+        fighters: [
+          {
+            name: "Puja Tomar",
+            discipline: "Wushu Sanda & MMA",
+            weightClass: "Strawweight (52 kg)",
+            academy: "Budha Martial Arts, Haryana",
+            record: "9 Wins - 4 Losses",
+            image: "https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "UFC Signed Athlete"
+          },
+          {
+            name: "Ritu 'The Indian Tigress' Phogat",
+            discipline: "Freestyle Wrestling / MMA",
+            weightClass: "Atomweight (48 kg)",
+            academy: "Phogat Akhada, Balali",
+            record: "7 Wins - 3 Losses",
+            image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Elite Wrestling"
+          },
+          {
+            name: "Vikas Singh Ruhil",
+            discipline: "Judo & MMA",
+            weightClass: "Featherweight (66 kg)",
+            academy: "Rohtak Combat Center",
+            record: "11 Wins - 4 Losses",
+            image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Judo Throws"
+          },
+          {
+            name: "Sumeet Khade",
+            discipline: "MMA / Striker",
+            weightClass: "Bantamweight (61 kg)",
+            academy: "Gurugram Combat Squad",
+            record: "10 Wins - 5 Losses",
+            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Knockout Artist"
+          },
+          {
+            name: "Amit Raj Deswal",
+            discipline: "Traditional Kushti & BJJ",
+            weightClass: "Middleweight (84 kg)",
+            academy: "Sonipat Warriors",
+            record: "5 Wins - 1 Loss",
+            image: "https://images.unsplash.com/photo-1508215885820-46522c1b7593?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Heavy Grappler"
+          }
+        ]
+      },
+      manipur: {
+        title: "Manipur State Squad",
+        subtitle: "Northeast powerhouses famous for speed, heart, and discipline",
+        fighters: [
+          {
+            name: "Roshan Mainam",
+            discipline: "Luta Livre & Wrestling",
+            weightClass: "Flyweight (57 kg)",
+            academy: "Thoubal Martial Club, Manipur",
+            record: "6 Wins - 2 Losses",
+            image: "https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Rear-Naked Choke Pro"
+          },
+          {
+            name: "Chungreng Koren",
+            discipline: "Wrestling & Sambo",
+            weightClass: "Bantamweight (61 kg)",
+            academy: "Imphal Combat Unit",
+            record: "5 Wins - 1 Loss",
+            image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Relentless Pressure"
+          },
+          {
+            name: "Manjit Kolekar",
+            discipline: "Invicta Vet / Striker",
+            weightClass: "Flyweight (57 kg)",
+            academy: "Northeast Striking Dojo",
+            record: "11 Wins - 3 Losses",
+            image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Counter Puncher"
+          },
+          {
+            name: "Thiyam Herojit",
+            discipline: "Wushu / Muay Thai",
+            weightClass: "Featherweight (66 kg)",
+            academy: "Kanglei Martial Arts",
+            record: "4 Wins - 1 Loss",
+            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Head Kick Specialist"
+          },
+          {
+            name: "Ningombam Bobo",
+            discipline: "Brazilian Jiu-Jitsu",
+            weightClass: "Lightweight (70 kg)",
+            academy: "Imphal BJJ Academy",
+            record: "3 Wins - 0 Losses",
+            image: "https://images.unsplash.com/photo-1508215885820-46522c1b7593?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Guillotine Choke"
+          }
+        ]
+      },
+      karnataka: {
+        title: "Karnataka (Bengaluru) Squad",
+        subtitle: "Southern technical fighters backed by world-class gyms & conditioning",
+        fighters: [
+          {
+            name: "Kantharaj Agasa",
+            discipline: "Judo Black Belt & MMA",
+            weightClass: "Bantamweight (61 kg)",
+            academy: "Bengaluru Fight Club",
+            record: "11 Wins - 2 Losses",
+            image: "https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Judo Throw Machine"
+          },
+          {
+            name: "Shashi Kumar",
+            discipline: "Muay Thai & Boxing",
+            weightClass: "Lightweight (70 kg)",
+            academy: "Rebellion Combat, Bangalore",
+            record: "6 Wins - 2 Losses",
+            image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Heavy Hands"
+          },
+          {
+            name: "Susovan Ghosh",
+            discipline: "Kickboxing & BJJ",
+            weightClass: "Flyweight (57 kg)",
+            academy: "Iron Arena Bangalore",
+            record: "4 Wins - 2 Losses",
+            image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Scrambler"
+          },
+          {
+            name: "Rana Rudra Pratap",
+            discipline: "Freestyle MMA",
+            weightClass: "Bantamweight (61 kg)",
+            academy: "Southpaw Fighting Academy",
+            record: "8 Wins - 1 Loss",
+            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Submission Hunter"
+          },
+          {
+            name: "Vidyadhar Joshi",
+            discipline: "Karate & BJJ",
+            weightClass: "Welterweight (77 kg)",
+            academy: "Silicon City MMA",
+            record: "5 Wins - 1 Loss",
+            image: "https://images.unsplash.com/photo-1508215885820-46522c1b7593?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Distance Controller"
+          }
+        ]
+      },
+      punjab: {
+        title: "Punjab State Squad",
+        subtitle: "High-octane power punchers and wrestling champions from Majha & Malwa",
+        fighters: [
+          {
+            name: "Gurdarshan 'Saint Lion' Mangat",
+            discipline: "MMA / BJJ Brown Belt",
+            weightClass: "Bantamweight (61 kg)",
+            academy: "Punjab Combat Hub",
+            record: "17 Wins - 4 Losses",
+            image: "https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Veteran Finisher"
+          },
+          {
+            name: "Balraj Singh Sandhu",
+            discipline: "Traditional Kushti & Boxing",
+            weightClass: "Middleweight (84 kg)",
+            academy: "Sher-E-Punjab MMA, Ludhiana",
+            record: "6 Wins - 1 Loss",
+            image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Heavyweight Slugger"
+          },
+          {
+            name: "Simranjit Singh",
+            discipline: "Kickboxing & Muay Thai",
+            weightClass: "Lightweight (70 kg)",
+            academy: "Amritsar Fight Club",
+            record: "5 Wins - 0 Losses",
+            image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Flying Knee Danger"
+          },
+          {
+            name: "Gurtej Singh",
+            discipline: "Greco-Roman Wrestling & MMA",
+            weightClass: "Welterweight (77 kg)",
+            academy: "Jalandhar Combat Academy",
+            record: "4 Wins - 1 Loss",
+            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Slam Artist"
+          },
+          {
+            name: "Manpreet Kaur",
+            discipline: "Boxing & Kickboxing",
+            weightClass: "Bantamweight (61 kg)",
+            academy: "Patiala Combat Sports",
+            record: "3 Wins - 0 Losses",
+            image: "https://images.unsplash.com/photo-1508215885820-46522c1b7593?auto=format&fit=crop&w=600&q=80",
+            styleBadge: "Aggressive Striker"
+          }
+        ]
+      }
+    };
+
+    // Render Function
+    function renderFighters(regionKey) {
+      const regionData = fightersData[regionKey] || fightersData.mumbai;
+      
+      // Update Titles
+      document.getElementById('selectedRegionTitle').textContent = regionData.title;
+      document.getElementById('selectedRegionSubtitle').textContent = regionData.subtitle;
+
+      // Update Cards
+      const container = document.getElementById('fighterCardsGrid');
+      container.innerHTML = '';
+
+      regionData.fighters.forEach((fighter, idx) => {
+        const card = document.createElement('div');
+        card.className = "bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden hover:border-red-500/80 transition-all duration-300 hover:shadow-xl hover:shadow-red-600/10 flex flex-col group";
+
+        card.innerHTML = `
+          <div class="relative h-48 overflow-hidden bg-zinc-950">
+            <img 
+              src="${fighter.image}" 
+              alt="${fighter.name}" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-black/30"></div>
+            <span class="absolute top-3 left-3 bg-red-600 text-white font-heading text-xs px-2.5 py-1 rounded-md font-semibold tracking-wider uppercase">
+              #${idx + 1} Selected
+            </span>
+            <span class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-sm border border-zinc-700 text-amber-400 text-xs px-2.5 py-1 rounded-md font-semibold">
+              ${fighter.record}
+            </span>
+          </div>
+
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="text-xs font-semibold text-red-500 uppercase tracking-widest">${fighter.weightClass}</span>
+                <span class="text-[11px] bg-zinc-800 text-zinc-300 px-2 py-0.5 rounded">${fighter.styleBadge}</span>
+              </div>
+              <h4 class="font-heading text-2xl font-bold uppercase text-white tracking-wide mb-2 group-hover:text-red-400 transition-colors">
+                ${fighter.name}
+              </h4>
+              <p class="text-xs text-zinc-300 mb-1">
+                <strong class="text-zinc-500 uppercase font-semibold">Discipline:</strong> ${fighter.discipline}
+              </p>
+              <p class="text-xs text-zinc-300">
+                <strong class="text-zinc-500 uppercase font-semibold">Academy:</strong> ${fighter.academy}
+              </p>
+            </div>
+
+            <div class="pt-4 mt-4 border-t border-zinc-800/80 flex items-center justify-between text-xs text-zinc-400">
+              <span class="flex items-center gap-1.5 text-emerald-400 font-medium">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Verified ICL Athlete
+              </span>
+              <span class="text-zinc-500 font-mono">ICL-2026</span>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Default Load with Mumbai
+    window.addEventListener('DOMContentLoaded', () => {
+      renderFighters('mumbai');
+    });
+  </script>
+</body>
+</html>
