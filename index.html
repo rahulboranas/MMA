@@ -139,6 +139,7 @@
                 class="w-full bg-black/60 border border-zinc-700 text-white py-3.5 px-4 pr-10 rounded-xl font-medium focus:ring-2 focus:ring-red-500 focus:outline-none appearance-none cursor-pointer"
                 onchange="handleStateChange(this.value)"
               >
+                <option value="" disabled selected>-- Select State / UT --</option>
               </select>
               <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-zinc-400">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -155,9 +156,11 @@
             <div class="relative">
               <select 
                 id="districtSelect" 
-                class="w-full bg-black/60 border border-zinc-700 text-white py-3.5 px-4 pr-10 rounded-xl font-medium focus:ring-2 focus:ring-red-500 focus:outline-none appearance-none cursor-pointer"
+                class="w-full bg-black/60 border border-zinc-700 text-white py-3.5 px-4 pr-10 rounded-xl font-medium focus:ring-2 focus:ring-red-500 focus:outline-none appearance-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 onchange="handleDistrictChange(this.value)"
+                disabled
               >
+                <option value="" disabled selected>-- Select District --</option>
               </select>
               <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-zinc-400">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,7 +178,7 @@
           <div>
             <span class="text-xs font-bold text-red-500 uppercase tracking-widest block">Featured Academies</span>
             <h3 id="clubsHeading" class="font-heading text-2xl sm:text-3xl font-bold uppercase text-white">
-              Top 3 Clubs in Thane / Mira Road, Maharashtra
+              Top 3 Certified Clubs
             </h3>
           </div>
           <span class="px-3 py-1 bg-red-600/20 border border-red-500/30 text-red-400 text-xs font-semibold rounded-full uppercase tracking-wider">
@@ -184,7 +187,9 @@
         </div>
 
         <div id="clubsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Clubs Injected by JS -->
+          <div class="col-span-full py-12 px-4 text-center border border-dashed border-zinc-800 rounded-2xl bg-zinc-900/40 text-zinc-500 text-sm">
+            Please select a State and District above to view certified academies.
+          </div>
         </div>
       </div>
 
@@ -194,10 +199,10 @@
           <div>
             <span class="text-xs font-bold text-amber-500 uppercase tracking-widest block">Athlete Roster</span>
             <h3 id="fightersHeading" class="font-heading text-2xl sm:text-3xl font-bold uppercase text-white">
-              Top Qualified Fighters (Mira Road / Maharashtra)
+              Top Qualified Fighters
             </h3>
             <p id="fightersSubheading" class="text-xs text-zinc-400 mt-1">
-              Official ICL Season-13 representative athletes selected from Combat Fighters
+              Select a State and District above to view the official ICL Season-13 athlete roster.
             </p>
           </div>
           <span class="px-3 py-1 bg-amber-500/20 border border-amber-500/40 text-amber-400 text-xs font-semibold rounded-full uppercase tracking-wider">
@@ -206,7 +211,9 @@
         </div>
 
         <div id="fightersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Fighters Injected by JS -->
+          <div class="col-span-full py-12 px-4 text-center border border-dashed border-zinc-800 rounded-2xl bg-zinc-900/40 text-zinc-500 text-sm">
+            Please select a State and District above to view qualified fighters.
+          </div>
         </div>
       </div>
 
@@ -338,14 +345,10 @@
         <div>
           <h5 class="font-heading text-sm uppercase text-white font-bold tracking-wider mb-4">Affiliations</h5>
           <ul class="text-xs space-y-1 text-zinc-400">
--             <li>National Martial Arts Committee - India
-</li>
--             <li>Asian Martial Arts Games Committee
-</li>
--             <li>World Martial Arts Games Committee
-</li>
--             <li>TAFISA (IOC, WHO, UNESCO)
-</li>
+            <li>National Martial Arts Committee - India</li>
+            <li>Asian Martial Arts Games Committee</li>
+            <li>World Martial Arts Games Committee</li>
+            <li>TAFISA (IOC, WHO, UNESCO)</li>
           </ul>
         </div>
       </div>
@@ -360,7 +363,7 @@
   <!-- ================= JAVASCRIPT ================= -->
   <script>
     const indiaStatesAndDistricts = {
-      "Maharashtra": ["Thane / Mira Road", "Mumbai Suburban", "Mumbai City", "Pune", "Kolhapur", "Nagpur", "Nashik"],
+      "Maharashtra": ["Thane", "Mumbai Suburban", "Mumbai City", "Pune", "Kolhapur", "Nagpur", "Nashik"],
       "Delhi (NCT)": ["South Delhi", "Central Delhi", "New Delhi", "North Delhi", "Dwarka"],
       "Karnataka": ["Bengaluru Urban", "Mysuru", "Mangaluru", "Belagavi"],
       "Haryana": ["Gurugram", "Faridabad", "Rohtak", "Sonipat"],
@@ -377,7 +380,7 @@
 
     // Authentic Clubs per District
     const clubsDatabase = {
-      "Thane / Mira Road": [
+      "Thane": [
         {
           name: "Combat Fighters MMA Academy",
           badge: "Official ICL Team",
@@ -443,9 +446,9 @@
       ]
     };
 
-    // Authentic Fighters per District (Directly includes Chandru Arjun at #2 from your letter)
+    // Authentic Fighters per District (Directly includes Chandru Arjun at #2)
     const fightersDatabase = {
-      "Thane / Mira Road": [
+      "Thane": [
         {
           rank: "Rank #1 Selected",
           name: "Daksh Shetty",
@@ -545,7 +548,6 @@
         { name: "Suraj Chauhan", discipline: "Traditional Kushti & MMA", weightClass: "Welterweight", badge: "Clincher", image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80" }
       ];
 
-      // Generate consistent, realistic rosters based on the district name
       let seed = 0;
       for (let i = 0; i < district.length; i++) {
         seed = (seed * 31 + district.charCodeAt(i)) >>> 0;
@@ -586,53 +588,72 @@
       ];
     }
 
-    // Populate dropdowns on start
+    // Populate dropdowns on start without auto-selection
     function initApp() {
       const stateSelect = document.getElementById('stateSelect');
-      stateSelect.innerHTML = '';
+      stateSelect.innerHTML = '<option value="" disabled selected>-- Select State / UT --</option>';
 
       Object.keys(indiaStatesAndDistricts).forEach(state => {
         const opt = document.createElement('option');
         opt.value = state;
         opt.textContent = state;
-        if (state === "Maharashtra") opt.selected = true;
         stateSelect.appendChild(opt);
       });
 
-      handleStateChange("Maharashtra", "Thane / Mira Road");
+      const districtSelect = document.getElementById('districtSelect');
+      districtSelect.innerHTML = '<option value="" disabled selected>-- Select District --</option>';
+      districtSelect.disabled = true;
     }
 
-    function handleStateChange(selectedState, preselectedDistrict = null) {
+    function handleStateChange(selectedState) {
       const districtSelect = document.getElementById('districtSelect');
-      districtSelect.innerHTML = '';
+      districtSelect.innerHTML = '<option value="" disabled selected>-- Select District --</option>';
+      
+      if (!selectedState) {
+        districtSelect.disabled = true;
+        return;
+      }
 
+      districtSelect.disabled = false;
       const districts = indiaStatesAndDistricts[selectedState] || [];
       districts.forEach(dist => {
         const opt = document.createElement('option');
         opt.value = dist;
         opt.textContent = dist;
-        if (preselectedDistrict && dist === preselectedDistrict) opt.selected = true;
         districtSelect.appendChild(opt);
       });
 
-      const currentDistrict = preselectedDistrict || (districts.length > 0 ? districts[0] : null);
-      if (currentDistrict) {
-        updateDirectory(selectedState, currentDistrict);
-      }
+      // Reset directory view until user selects a district
+      document.getElementById('clubsHeading').textContent = `Top 3 Clubs in ${selectedState}`;
+      document.getElementById('fightersHeading').textContent = `Top Qualified Fighters (${selectedState})`;
+      document.getElementById('fightersSubheading').textContent = `Please select a district in ${selectedState} to view verified athletes.`;
+
+      document.getElementById('clubsGrid').innerHTML = `
+        <div class="col-span-full py-12 px-4 text-center border border-dashed border-zinc-800 rounded-2xl bg-zinc-900/40 text-zinc-500 text-sm">
+          Please select a district above to view featured academies in ${selectedState}.
+        </div>
+      `;
+      document.getElementById('fightersGrid').innerHTML = `
+        <div class="col-span-full py-12 px-4 text-center border border-dashed border-zinc-800 rounded-2xl bg-zinc-900/40 text-zinc-500 text-sm">
+          Please select a district above to view the qualified fighter roster for ${selectedState}.
+        </div>
+      `;
     }
 
     function handleDistrictChange(selectedDistrict) {
       const stateSelect = document.getElementById('stateSelect');
-      updateDirectory(stateSelect.value, selectedDistrict);
+      if (stateSelect.value && selectedDistrict) {
+        updateDirectory(stateSelect.value, selectedDistrict);
+      }
     }
 
-    // Render both Clubs and Fighters
+    // Render both Clubs and Fighters once selected
     function updateDirectory(state, district) {
       // 1. Update Headings
       document.getElementById('clubsHeading').textContent = `Top 3 Clubs in ${district}, ${state}`;
       document.getElementById('fightersHeading').textContent = `Top Qualified Fighters (${district})`;
       
-      if (district.includes("Mira Road")) {
+      if (district === "Thane") {
         document.getElementById('fightersSubheading').textContent = `Official ICL Season-13 Combat Fighters Roster (Danish Khan Academy)`;
       } else {
         document.getElementById('fightersSubheading').textContent = `Verified combat athletes qualified for ICL Season 13 District flights`;
@@ -686,7 +707,6 @@
       fighters.forEach((f) => {
         const isChandru = f.name.includes("Chandru Arjun");
         const fCard = document.createElement('div');
-        // Chandru Arjun gets a highlighted gold/red border accent
         fCard.className = `bg-zinc-900 border ${isChandru ? 'border-amber-500/80 ring-1 ring-amber-500/50' : 'border-zinc-800'} rounded-2xl overflow-hidden hover:border-red-500 transition-all shadow-lg flex flex-col group`;
 
         fCard.innerHTML = `
